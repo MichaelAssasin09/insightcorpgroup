@@ -1,0 +1,487 @@
+/* --- SUBSIDIARY SLIDER (HOME) --- */
+.subsidiary-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 2rem;
+    padding: 2rem 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+}
+.subsidiary-slider::-webkit-scrollbar { display: none; }
+
+.sub-card {
+    min-width: 20rem;
+    background: var(--secondary-dark);
+    padding: 0;
+    border: 1px solid rgba(255,255,255,0.1);
+    scroll-snap-align: center;
+    transition: var(--transition);
+    position: relative;
+    border-left: 3px solid var(--primary-white);
+    color: var(--accent-grey);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sub-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.logo-box {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed rgba(255,255,255,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    flex-shrink: 0;
+    margin: 1rem;
+}
+
+.logo-box img {
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-content {
+    padding: 2.5rem;
+    flex: 1;
+    z-index: 100;
+}
+
+.card-content a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary-white);
+    font-weight: bold;
+}
+
+.sub-techsight {
+    background: #1e3a8a;
+    color: white;
+    border-left: 4px solid #00f2ff;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.sub-techsight::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-bottom: 20px solid #00f2ff;
+    opacity: 0.5;
+}
+
+.sub-techsight::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 15px;
+    height: 15px;
+    background: #00f2ff;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.sub-creative {
+    background: #00994d;
+    color: white;
+    border-left: 4px solid #ff6600;
+    position: relative;
+    overflow: hidden;
+}
+
+.sub-creative::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    background: #ff6600;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    opacity: 0.8;
+}
+
+.sub-creative::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: #ff6600;
+    border-radius: 50%;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.sub-central {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    color: #495057;
+    border-left: 4px solid #6b7280;
+}
+
+.subsidiary-section {
+    background:
+        radial-gradient(circle at 30% 70%, rgba(30, 30, 30, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(35, 35, 35, 0.3) 0%, transparent 50%),
+        linear-gradient(45deg, var(--bg-dark-grey) 0%, #1a1a1a 50%, var(--bg-dark-grey) 100%);
+    color: var(--accent-grey);
+}
+
+/* --- SUBSIDIARIES PAGE STYLES --- */
+.subsidiary-card {
+    padding: 0;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+    color: white;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-top: 2rem;
+}
+
+.subsidiary-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.subsidiary-card p {
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.subsidiary-card ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.subsidiary-card li {
+    margin-bottom: 0.5rem;
+}
+
+/* Techsight Detail Card */
+.sub-techsight-detail {
+    background: #1e3a8a;
+    border-left: 6px solid #00f2ff;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.4);
+}
+
+.sub-techsight-detail::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-bottom: 30px solid #00f2ff;
+    opacity: 0.6;
+}
+
+.sub-techsight-detail::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    background: #00f2ff;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.tech-decoration {
+    position: absolute;
+    background: rgba(0, 242, 255, 0.3);
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.tech-line1 {
+    top: 15%;
+    left: 20%;
+    width: 60px;
+    height: 3px;
+    background: #00f2ff;
+}
+
+.tech-circle1 {
+    top: 25%;
+    right: 15%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 242, 255, 0.5);
+}
+
+.tech-line2 {
+    bottom: 20%;
+    left: 30%;
+    width: 50px;
+    height: 3px;
+    background: #00f2ff;
+}
+
+.tech-circle2 {
+    bottom: 30%;
+    right: 25%;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(0, 242, 255, 0.5);
+}
+
+.tech-pattern {
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #00f2ff;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* Creative Detail Card */
+.sub-creative-detail {
+    background: #00994d;
+    border-left: 6px solid #ff6600;
+    box-shadow: 0 0 30px rgba(255, 102, 0, 0.4);
+}
+
+.creative-decoration {
+    position: absolute;
+    background: rgba(255, 102, 0, 0.3);
+    opacity: 0.4;
+}
+
+.creative-circle1 {
+    top: 10%;
+    left: 15%;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    animation: float 4s ease-in-out infinite;
+}
+
+.creative-triangle1 {
+    top: 20%;
+    right: 20%;
+    width: 50px;
+    height: 50px;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    animation: rotate 6s linear infinite;
+}
+
+.creative-circle2 {
+    bottom: 15%;
+    left: 25%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    animation: float 5s ease-in-out infinite;
+}
+
+.creative-square1 {
+    bottom: 25%;
+    right: 15%;
+    width: 45px;
+    height: 45px;
+    animation: rotate 8s linear infinite reverse;
+}
+
+.creative-wave1 {
+    top: 60%;
+    left: 60%;
+    width: 80px;
+    height: 20px;
+    background: linear-gradient(90deg, transparent, rgba(255, 102, 0, 0.3), transparent);
+    border-radius: 10px;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+/* New corner fillers */
+.tech-corner-filler {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, transparent 0%, rgba(0, 242, 255, 0.4) 50%, rgba(0, 242, 255, 0.8) 100%);
+    clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+    z-index: 1;
+}
+
+.creative-wave-corner {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+    height: 80px;
+    background: #ff6600;
+    clip-path: ellipse(60px 40px at 100% 100%);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+#techsight, #creative-hub {
+    margin-left: 65px;
+    scale: 1.2;
+}
+
+#techsight-sub-logo, #creative-hub-sub-logo {
+    margin-left: 80px;
+    margin-top: 115px;
+    scale: 1.5;
+}
+
+@media (max-width: 768px) {
+    #techsight, #creative-hub {
+        margin-top: 2rem;
+        margin-left: auto;
+    }
+    #techsight img, #creative-hub img {
+        scale: 1.2;
+    }
+    #techsight-sub-logo, #creative-hub-sub-logo {
+        margin-left: auto;
+        margin-top: 30px;
+        scale: 1.5;
+    }
+    #techsight-sub-logo img, #creative-hub-sub-logo img {
+        scale: 1.2;
+    }
+    #techsight-sub, #creative-hub-sub {
+        scale: 0.975;
+    }
+}
+/* --- RESPONSIVE FOR SUBSIDIARIES --- */
+@media (max-width: 768px) {
+    .subsidiary-slider {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+    }
+    .sub-card {
+        min-width: unset;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    .logo-box {
+        width: 80px;
+        height: 80px;
+        margin: 0.5rem auto;
+    }
+    .card-content {
+        padding: 1.5rem;
+    }
+    .subsidiary-card {
+        flex-direction: column;
+        text-align: center;
+        min-height: unset;
+        padding-top: 1rem;
+    }
+    .subsidiary-card h2 {
+        font-size: 2rem;
+    }
+    .subsidiary-card p {
+        font-size: 0.9rem;
+    }
+    .subsidiary-card ul {
+        text-align: left;
+        padding-left: 1rem;
+    }
+    .logo-box img {
+        width: 120%;
+        height: 110%;
+    }
+}
+
+@media (max-width: 480px) {
+    .subsidiary-slider {
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+    .sub-card {
+        gap: 0.3rem;
+    }
+    .logo-box {
+        width: 70px;
+        height: 70px;
+        margin: 0.3rem auto;
+    }
+    .card-content {
+        padding: 1rem;
+    }
+    .subsidiary-card {
+        padding-top: 0.8rem;
+        margin-bottom: 4rem;
+    }
+    .subsidiary-card h2 {
+        font-size: 1.8rem;
+    }
+    .subsidiary-card p {
+        font-size: 0.85rem;
+    }
+    .subsidiary-card ul {
+        padding-left: 0.8rem;
+    }
+    .subsidiary-card li {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .subsidiary-slider {
+        gap: 0.8rem;
+        padding: 0.8rem 0;
+    }
+    .sub-card {
+        gap: 0.2rem;
+    }
+    .logo-box {
+        width: 60px;
+        height: 60px;
+        margin: 0.2rem auto;
+    }
+    .card-content {
+        padding: 0.8rem;
+    }
+    .subsidiary-card {
+        padding-top: 0.6rem;
+        margin-bottom: 3rem;
+    }
+    .subsidiary-card h2 {
+        font-size: 1.6rem;
+    }
+    .subsidiary-card p {
+        font-size: 0.8rem;
+    }
+    .subsidiary-card ul {
+        padding-left: 0.6rem;
+    }
+    .subsidiary-card li {
+        font-size: 0.8rem;
+    }
+}
