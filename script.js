@@ -116,6 +116,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Auto-slide every 3 seconds
     setInterval(nextSlide, 3000);
 
+    // --- Team Slider Functionality ---
+    const sliderContainers = document.querySelectorAll('.team-slider-container');
+
+    sliderContainers.forEach(container => {
+        const slider = container.querySelector('.team-slider');
+        const prevBtn = container.querySelector('.slider-prev');
+        const nextBtn = container.querySelector('.slider-next');
+
+        const scrollAmount = 368; // Fixed: 18rem (288px) + padding (48px) + gap (32px)
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Prev button clicked');
+                if (slider.scrollLeft > 0) {
+                    slider.scrollLeft -= scrollAmount;
+                }
+            });
+
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Next button clicked');
+                if (slider.scrollLeft < slider.scrollWidth - slider.clientWidth) {
+                    slider.scrollLeft += scrollAmount;
+                }
+            });
+        }
+    });
+
     // --- Scroll Animation ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

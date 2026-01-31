@@ -33,12 +33,28 @@ html {
 body {
     font-family: var(--font-main);
     background:
-        radial-gradient(circle at 20% 80%, rgba(37, 37, 37, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(42, 42, 42, 0.2) 0%, transparent 50%),
-        linear-gradient(135deg, var(--bg-dark-grey) 0%, #252525 50%, var(--bg-dark-grey) 100%);
+        radial-gradient(ellipse at top, rgba(0, 0, 0, 0.8) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom, rgba(20, 20, 20, 0.6) 0%, transparent 50%),
+        linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #0f0f0f 50%, #1a1a1a 75%, #0a0a0a 100%);
+    background-attachment: fixed;
     color: var(--accent-grey);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 25% 25%, rgba(0, 242, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 102, 0, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* --- TYPOGRAPHY --- */
@@ -123,10 +139,9 @@ ul {
 .hero {
     height: 90vh;
     display: flex;
-    align-items: center;
+    
     justify-content: left;
     text-align: left;
-    background-image: url('bg.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -138,24 +153,10 @@ ul {
 
 /* Geometrical background shapes */
 .hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background:
-        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.03) 0%, transparent 50%),
-        linear-gradient(45deg, transparent 49%, rgba(255,255,255,0.02) 50%, transparent 51%),
-        linear-gradient(-45deg, transparent 49%, rgba(255,255,255,0.02) 50%, transparent 51%);
-    background-size: 200px 200px, 150px 150px, 100px 100px, 100px 100px;
-    background-position: 0% 0%, 100% 100%, 50% 50%, 50% 50%;
-    opacity: 0.6;
-    pointer-events: none;
+    background: radial-gradient(circle at top left, rgba(0, 242, 255, 0.2), transparent 60%);
 } 
-
-.hero-content {
-    z-index: 1;
-    max-width: 50rem;
-    animation: fadeUp 1s ease-out;
+.hero::after {
+    background: radial-gradient(circle at bottom right, rgba(255, 102, 0, 0.15), transparent 60%);
 }
 
 .hero-title {
@@ -163,6 +164,7 @@ ul {
     letter-spacing: -2px;
     margin-bottom: 1.5rem;
     color: var(--primary-white);
+    min-height: 9.6rem;
 }
 
 .hero-subtitle {
@@ -173,23 +175,42 @@ ul {
 
 .btn {
     padding: 1rem 2.5rem;
-    border: 1px solid var(--primary-white);
-    background: transparent;
-    color: var(--primary-white);
+    border: none;
+    background: var(--titanium-light);
+    color: var(--primary-black);
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
     display: inline-block;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     background: var(--primary-white);
-    color: var(--bg-dark-grey);
+}
+
+.hero-left {
+    margin-top: 14rem;
+}
+
+.hero-right {
+    margin-top: 6rem;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    
 }
 
 /* --- GENERAL SECTIONS --- */
 .section {
     padding: 6rem 0;
+}
+
+#about-section {
+    margin-top: -20rem;
 }
 
     .section-title {
@@ -213,6 +234,11 @@ ul {
     .section div[style*="display: grid"] div:last-child {
         order: 1;
         text-align: center;
+    }
+
+    #about-section div[style*="display: flex"] {
+        flex-direction: column;
+        gap: 2rem;
     }
 
 /* --- FOOTER --- */
@@ -279,6 +305,7 @@ ul {
 
 /* Carousel Styles */
 .carousel {
+    display: flex;
     position: relative;
     width: 56.25rem;
     height: 37.5rem;
@@ -290,6 +317,7 @@ ul {
 
 .carousel-inner {
     display: flex;
+    width: 100%;
     transition: transform 0.5s ease;
 }
 
@@ -311,18 +339,6 @@ ul {
 }
 
 /* --- RESPONSIVE --- */
-@media (min-width: 1201px), (max-width: 1366px) {
-    .carousel {
-        height: 25rem;
-        width: 40rem;
-    }
-    .hero-title {
-        font-size: 3rem;
-    }
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-}
 @media (max-width: 768px) {
     .navbar { padding: 1rem 5%; }
     .nav-links {
@@ -356,19 +372,30 @@ ul {
         border-right: none;
         animation: none;
     }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    .section div[style*="display: grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        align-items: center;
+    }
     .carousel {
         width: 100%;
-        height: auto;
+        height: 250px;
         margin-left: 0;
         max-width: 100%;
     }
     .carousel-item img {
-        position: static;
+        position: relative;
         width: 100%;
-        height: 250px;
+        height: 100%;
         object-fit: cover;
     }
     .carousel-next, .carousel-prev {
         display: none;
+    }
+    #about-section {
+        margin-top: 0;
     }
 }
