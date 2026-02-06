@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 typingTitle.innerHTML += text.charAt(index);
                 index++;
             }
-            setTimeout(typeWriter, 100);
+            setTimeout(typeWriter, 40);
         }
     }
 
