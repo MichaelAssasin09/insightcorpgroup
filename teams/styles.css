@@ -1,0 +1,320 @@
+.team-section-central {
+    background: radial-gradient(circle at top right, #333, #0a0a0a);
+}
+
+.card-central {
+    background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%);
+    border: 1px solid #444;
+    transition: all 0.3s ease;
+}
+
+.card-central:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+.card-central img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-central img:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.card-central .role {
+    color: #aaa;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.card-central .btn-bio {
+    border-color: #fff;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.card-central .btn-bio:hover {
+    background: #fff;
+    color: #000;
+}
+
+.team-section-tech {
+    background-color: var(--tech-blue);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-section-tech::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(transparent, transparent 20px, rgba(0, 242, 255, 0.03) 21px);
+    pointer-events: none;
+}
+
+.card-tech {
+    background: rgba(11, 17, 32, 0.9);
+    border: 1px solid var(--tech-cyan);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.card-tech:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 40px rgba(0, 242, 255, 0.4);
+}
+
+.card-tech img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid var(--tech-cyan);
+}
+
+.card-tech img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--tech-cyan);
+}
+
+.card-tech h3 {
+    color: var(--tech-cyan);
+    font-family: 'Courier New', monospace;
+    letter-spacing: -1px;
+}
+
+.card-tech .role {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+}
+
+.card-tech .quote {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.card-tech .btn-bio {
+    border: 2px solid var(--tech-cyan);
+    color: var(--tech-cyan);
+    background: transparent;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.card-tech .btn-bio:hover {
+    background: var(--tech-cyan);
+    color: #000;
+    box-shadow: 0 0 20px var(--tech-cyan);
+}
+
+.team-section-creative {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(15, 15, 15, 0.95) 100%);
+    backdrop-filter: blur(20px);
+}
+
+.deco-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--creative-green);
+    top: 10%;
+    left: -5%;
+}
+
+.blob-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--creative-orange);
+    bottom: 10%;
+    right: -5%;
+}
+
+.card-creative {
+    background: var(--secondary-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.card-creative:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.card-creative img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid var(--creative-orange);
+}
+
+.card-creative img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--creative-orange);
+}
+
+.card-creative .role {
+    color: var(--creative-green);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-creative .quote {
+    color: var(--accent-grey);
+    opacity: 0.8;
+}
+
+.card-creative .btn-bio {
+    background: var(--creative-orange);
+    border: none;
+    color: white;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.card-creative .btn-bio:hover {
+    transform: scale(1.05);
+    background: #e65c00;
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.4);
+}
+
+/* Card Slider Styles */
+.slider-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.slider-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+}
+
+.slider-wrapper:active {
+    cursor: grabbing;
+}
+
+.slider-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-track {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0.5rem;
+    width: max-content;
+}
+
+/* Card width in slider */
+.slider-track .team-card {
+    width: 320px;
+    flex-shrink: 0;
+}
+
+/* Custom Scrollbar for Desktop */
+.slider-scrollbar {
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 15px;
+}
+
+.slider-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    height: 6px;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-scrollbar-thumb {
+    background: var(--tech-cyan);
+    height: 100%;
+    width: 80px;
+    border-radius: 3px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.slider-scrollbar-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--tech-cyan);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .slider-container {
+        padding-bottom: 20px;
+    }
+    
+    .slider-track .team-card {
+        width: 280px;
+    }
+    
+    .slider-scrollbar {
+        display: none;
+    }
+    
+    .slider-wrapper {
+        scroll-snap-type: x mandatory;
+    }
+    
+    .slider-track .team-card {
+        scroll-snap-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-track .team-card {
+        width: 260px;
+    }
+}
+
+.team-card {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 991px) {
+    .card-central img,
+    .card-tech img,
+    .card-creative img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-central img,
+    .card-tech img,
+    .card-creative img {
+        width: 120px;
+        height: 120px;
+    }
+}
